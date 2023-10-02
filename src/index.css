@@ -1,13 +1,396 @@
-body {
+/* Option 2: Import via CSS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  border: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Lato';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --Fcolor-lawful-purple: #5E1B89;
+  --Fcolor-lawful-purple-lessen: #8136af;
+  --Fcolor-striking-orange: #F4512C;
+  --Fcolor-white: #F8FFFE;
+  --Fcolor-soft-orange: #FF7F4D;
+  --Fcolor-soft-purple: #9D71BC;
+  --gradient-Lexmeet: linear-gradient(30deg, #692891, #f35a38);
+  --gradient-Lexmeet-left-to-right: linear-gradient(left to right, #692891, #f35a38);
+  --gradient-orange: linear-gradient(30deg, #F4512C, #FF7F4D);
+  --gradient-Lexmeet-weak: linear-gradient(30deg, #f1d5ce, #e2ccf0);
+  --gradient-Lexmeet-to-bottom: linear-gradient(to bottom, #692891, #f35a38);
+  --MainFont: 'Roboto Slab', sans-serif;
+  --SecondaryFont: 'Lato', sans-serif;
+  --transtion-1: all 0.3s ease;
+  --transtion-2: all 0.4s ease;
+  --transtion-3: all 0.5s ease;
+}
+
+
+
+body {
+  background: var(--gradient-Lexmeet);
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+
+}
+
+.App {
+  max-width: 650px;
+  width: 100%;
+  max-height: 700px;
+  box-shadow: 0 5px 20px #343434;
+  padding: 50px;
+  border-radius: 6px;
+  background: white;
+  position: relative;
+  top: 70px;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: #555;
+
+}
+
+.Logo {
+  width: 5rem;
+  height: 5rem;
+
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+  display: flex;
+
+  input {
+
+    border-bottom: 1px solid #555;
+    margin: 0 5px;
+    flex: 2;
+  }
+
+  button {
+    flex: 1;
+    background: #555;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}
+
+form input {
+  flex: 2;
+  border-bottom: 2px solid var(--Fcolor-lawful-purple);
+  padding: 10px;
+  margin: 0 5px;
+}
+
+form input:focus {
+  border: 1px solid var(--Fcolor-lawful-purple-lessen);
+}
+
+ul {
+  /* width: 540px; */
+
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  padding: none;
+
+}
+
+
+ul li {
+
+  border-radius: 6px;
+  /* border: 1px solid var(--Fcolor-soft-orange); */
+  background: var(--gradient-Lexmeet);
+  box-shadow: 0 0 25px 5px #20202045;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -28px;
+  margin-bottom: 6px;
+  width: 530px;
+
+
+  .active {
+    text-decoration: line-through 0.27rem solid;
+    color: var(--Fcolor-soft-orange);
+
+  }
+
+  .todoText {
+    font-family: var(--SecondaryFont);
+    font-size: 1rem;
+    color: var(--Fcolor-white);
+    margin-left: 10px;
+  }
+
+}
+
+
+
+ul li button {
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editButton {
+  background: var(--Fcolor-lawful-purple-lessen);
+}
+
+.saveButton {
+  background: var(--Fcolor-lawful-purple-lessen);
+  font-weight: 600;
+}
+
+
+ul li input,
+.row input {
+
+  margin-right: 5px;
+  transform: translateY(1px);
+  cursor: pointer;
+
+}
+
+
+
+
+li label {
+  width: 100%;
+  cursor: pointer;
+
+  color: var(--Fcolor-white);
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  flex: 1;
+  font-family: var(--MainFont);
+
+}
+
+
+
+.nothingTodo {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--Fcolor-lawful-purple-lessen);
+  text-align: center;
+  margin-top: 70px;
+}
+
+.appTitle {
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.todoTitle {
+  font-family: 'Lato';
+  font-weight: 600;
+  margin-right: 10px;
+  letter-spacing: -1px;
+  font-size: 2.5rem;
+  color: var(--Fcolor-lawful-purple);
+}
+
+.AppTitle {
+  font-family: 'Lato', sans-serif;
+  color: var(--Fcolor-striking-orange);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.createButton {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--Fcolor-lawful-purple-lessen);
+  transition: var(--transtion-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15%;
+  color: white;
+  width: 2.8rem;
+  height: 2.7rem;
+  margin: 0px 9px 0px 2px;
+
+}
+
+.createButton:hover {
+  box-shadow: 0 2px 8px var(--Fcolor-soft-purple);
+
+}
+
+.createButton:active {
+  background-color: #f1d5ce00;
+  border: 1px solid var(--Fcolor-lawful-purple);
+  color: var(--Fcolor-lawful-purple);
+  transition: var(--transtion-1);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--Fcolor-striking-orange);
+  position: relative;
+}
+
+::placeholder {
+  color: var(--Fcolor-soft-purple);
+}
+
+input[type="checkbox"]:checked {
+  accent-color: var(--Fcolor-striking-orange);
+}
+
+input[type="checkbox"]:checked~label {
+  accent-color: var(--Fcolor-lawful-purple-lessen);
+}
+
+
+
+
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  .btnDelete {
+    background: var(--Fcolor-striking-orange);
+    width: 3.5rem;
+    height: 2.4rem;
+    margin: 0px 16px 0px 5px;
+    border-radius: 6px;
+    color: white;
+
+    font-family: var(--SecondaryFont);
+    transition: var(--transtion-3);
+  }
+
+  .btnDelete:hover {
+    box-shadow: 0 2px 6px var(--Fcolor-soft-orange);
+  }
+
+  /* .btn-label {
+    position: relative;
+    left: -16.5px;
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 5px 0 0 5px;
+  } */
+
+  .btn-labeled {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+
+
+  .labelFooter {
+    cursor: pointer;
+    color: var(--Fcolor-striking-orange);
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: inline-block;
+    width: 70px;
+
+  }
+
+
+
+  .remainingTodo {
+    margin: none;
+    padding: none;
+    display: inline-block;
+    color: var(--Fcolor-striking-orange);
+    font-size: 1.1rem;
+    font-weight: lighter;
+    display: inline;
+    width: 180px;
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  .remainingTodoNum {
+    color: var(--Fcolor-lawful-purple-lessen);
+    font-weight: 900;
+    font-size: 1.15rem;
+    display: inline-block;
+  }
+
+  .allText {
+    color: var(--Fcolor-lawful-purple-lessen);
+  }
+
+}
+
+.lgIcon {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+
+}
+
+.editInput {
+  padding: 6px;
+  border-radius: 2px;
+  margin-left: 25px;
+  width: 50%;
+  height: 2rem;
+  color: var(--Fcolor-lawful-purple);
+  cursor: text;
+}
+
+
+
+@media(max-width: 400px) {
+  .App {
+    padding: 10px;
+  }
 }
